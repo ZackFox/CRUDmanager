@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="z:war">
+  <artifact type="war" name="crudmanager:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="crud-manager-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="z:war exploded" />
+      <element id="artifact" artifact-name="crudemanage:war exploded" />
     </root>
   </artifact>
 </component>
