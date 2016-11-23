@@ -6,9 +6,9 @@
 	<html lang="en">
 		<head>
 			<title>Blabber</title>
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
-			<link rel="stylesheet" href="<c:url value="../../resources/css/bootstrap.min.css"/>">
-			<%--<link rel="stylesheet" href="<c:url value="/resources/css/hello.css"/>">--%>
+			<%--<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">--%>
+			<link rel="stylesheet" href="/css/bootstrap.min.css">
+
 		</head>
 
 		<body>
