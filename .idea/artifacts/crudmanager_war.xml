@@ -2,7 +2,7 @@
   <artifact type="war" name="crudmanager:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="crud-manager-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="crudemanage:war exploded" />
+      <element id="artifact" artifact-name="crudmanager:war exploded" />
     </root>
   </artifact>
 </component>

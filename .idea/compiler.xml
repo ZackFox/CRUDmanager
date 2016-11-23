@@ -23,11 +23,13 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="crudemanage" />
+        <module name="crudmanager" />
         <module name="z" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="crudemanage" target="1.5" />
+      <module name="crudmanager" target="1.5" />
       <module name="z" target="1.5" />
       <module name="z (1)" target="1.5" />
       <module name="z (2)" target="1.5" />

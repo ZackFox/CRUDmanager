@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.stereotype.Controller;
 
 @Controller
-
 public class MainController {
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value ="/" , method = RequestMethod.GET)
     String welcome(){
         return "index";
     }
