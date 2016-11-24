@@ -11,12 +11,31 @@
 		</head>
 
 		<body>
-			<div class="container">
-				<a href="userwall" class="go">go to the wall</a>
+			<header>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 ">
+							<a href="#">Менеджер задач</a>
+						</div>
 
+						<div class="col-md-8">
+								<form action="">
+									<textarea class="task-text"></textarea>
+								<input class="btn btn-success" type="submit" value="занести">
+							</form>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="container tsk">
 				<div class="row">
-					<div class="col-md-12 center-block">
-						<h2>Привет Болтун! Хочешь поделиться новыми слухами?</h2>
+					<div class="col-md-6 col-md-offset-3 list-task">
+						<div class="task">
+							<span class="day">Понедельник / 10 Июня</span>
+							<p>Сходить в баню и купить носки</p>
+							<span class="remain">15:30</span>
+						</div>
 					</div>
 				</div>
 			</div>
