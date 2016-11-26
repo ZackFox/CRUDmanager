@@ -19,8 +19,8 @@
 						</div>
 
 						<div class="col-md-8">
-								<form action="">
-									<textarea class="task-text"></textarea>
+								<form action="/" method="post">
+									<textarea class="task-text" name="task"></textarea>
 								<input class="btn btn-success" type="submit" value="занести">
 							</form>
 						</div>
@@ -33,7 +33,7 @@
 					<div class="col-md-6 col-md-offset-3 list-task">
 						<div class="task">
 							<span class="day">Понедельник / 10 Июня</span>
-							<p>Сходить в баню и купить носки</p>
+							<p>${task}</p>
 							<span class="remain">15:30</span>
 						</div>
 					</div>
