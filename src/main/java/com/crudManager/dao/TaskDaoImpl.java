@@ -31,8 +31,8 @@ public class TaskDaoImpl implements TaskDao  {
         return results;
     }
 
-    public void updateTask(int id) {
-        entityManager.merge(entityManager.find(UserTask.class,id));
+    public void updateTask(UserTask task) {
+        entityManager.merge(task);
     }
 
     public void deleteTask(int id) {

@@ -17,15 +17,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3 ">
-							<a href="#">Менеджер задач</a>
-						</div>
-
-						<div class="col-md-8">
-								<form action="/" method="post">
-									<textarea class="task-text" name="task-text"></textarea>
-
-								<input class="btn btn-success" type="submit" value="занести">
-							</form>
+							<h2>Менеджер задач</h2>
 						</div>
 					</div>
 				</div>
@@ -33,7 +25,16 @@
 
 			<div class="container tsk">
 				<div class="row">
-					<div class="col-md-6 col-md-offset-3 list-task">
+					<div class="col-md-6">
+						<form action="/add" method="post">
+							<textarea class="task-text" name="task-text"></textarea>
+							<input type="text" name="task-date" placeholder="00-00-0000">
+							<input type="text" name="task-time" placeholder="00:00">
+							<input class="btn btn-success" type="submit" value="Записать">
+						</form>
+					</div>
+
+					<div class="col-md-6 list-task">
 						<c:forEach var="task" items="${tasklist}">
 							<div class="task">
 								<span class="task-date">

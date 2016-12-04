@@ -3,11 +3,14 @@ package com.crudManager.controllers;
 
 import com.crudManager.service.TaskService;
 import com.crudManager.domain.UserTask;
+import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
@@ -22,12 +25,22 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping(value ="/" , method = RequestMethod.POST)
-    String addTask(@RequestParam("task-text")String text){
+    @RequestMapping(value ="/add" , method = RequestMethod.POST)
+    String addTask(@RequestParam("task-text")String text,
+                   @RequestParam("task-date")String taskDate,
+                   @RequestParam("task-time")String taskTime){
 
         UserTask task = new UserTask();
-        task.setDate(new Date());
         task.setText(text);
+
+        try {
+            String sDate = taskDate+" "+taskTime;
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+            Date date = formatter.parse(sDate);
+            task.setDate(date);
+        } catch (ParseException e) {
+            System.out.println();
+        }
 
         taskService.createTask(task);
         return "redirect:/";
@@ -35,7 +48,7 @@ public class MainController {
 
     @RequestMapping(value ="/update/{id}", method = RequestMethod.GET)
     String update(@PathVariable("id")int id,@RequestParam("newText")String newText){
-        UserTask task = new UserTask();
+        UserTask task = taskService.findTask(id);;
         task.setText(newText);
 
         taskService.updateTask(task);

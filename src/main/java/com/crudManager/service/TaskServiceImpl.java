@@ -34,11 +34,9 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Transactional
-    public void updateTask(int id) {
-        taskDao.updateTask(id);
+    public void updateTask(UserTask task) {
+        taskDao.updateTask(task);
     }
-
-    @Transactional
     public void deleteTask(int id) {
         taskDao.deleteTask(id);
     }

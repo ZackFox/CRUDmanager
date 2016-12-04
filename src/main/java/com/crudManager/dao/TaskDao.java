@@ -8,6 +8,6 @@ public interface TaskDao {
     void createTask(UserTask task);
     UserTask findTask(int id);
     List<UserTask> getTaskList();
-    void updateTask(int id);
+    void updateTask(UserTask task);
     void deleteTask(int id);
 }
