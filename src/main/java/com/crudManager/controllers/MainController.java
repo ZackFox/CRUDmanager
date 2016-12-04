@@ -1,31 +1,24 @@
 package com.crudManager.controllers;
 
 
-import com.crudManager.dao.TaskDao;
+import com.crudManager.service.TaskService;
 import com.crudManager.domain.UserTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 @Controller
 public class MainController {
 
     @Autowired
-    TaskDao taskDao;
+    TaskService taskService;
 
     @RequestMapping(value ="/" , method = RequestMethod.GET)
     String welcome( Model model){
-        model.addAttribute("tasklist",taskDao.getTaskList());
+        model.addAttribute("tasklist",taskService.getTaskList());
         return "index";
     }
 
@@ -33,12 +26,25 @@ public class MainController {
     String addTask(@RequestParam("task-text")String text){
 
         UserTask task = new UserTask();
-
-//        Calendar cal = Calendar.getInstance();
         task.setDate(new Date());
         task.setText(text);
-        taskDao.createTask(task);
 
+        taskService.createTask(task);
+        return "redirect:/";
+    }
+
+    @RequestMapping(value ="/update/{id}", method = RequestMethod.GET)
+    String update(@PathVariable("id")int id,@RequestParam("newText")String newText){
+        UserTask task = new UserTask();
+        task.setText(newText);
+
+        taskService.updateTask(task);
+        return "redirect:/";
+    }
+
+    @RequestMapping(value ="/remove/{id}", method = RequestMethod.GET)
+    String delete(@PathVariable("id")int id){
+        taskService.deleteTask(id);
         return "redirect:/";
     }
 }

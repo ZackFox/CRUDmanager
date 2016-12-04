@@ -4,7 +4,6 @@ import com.crudManager.domain.UserTask;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-@Service
-@Transactional
 public class TaskDaoImpl implements TaskDao  {
 
     @PersistenceContext
@@ -34,8 +31,8 @@ public class TaskDaoImpl implements TaskDao  {
         return results;
     }
 
-    public void updateTask(UserTask task) {
-        entityManager.merge(task);
+    public void updateTask(int id) {
+        entityManager.merge(entityManager.find(UserTask.class,id));
     }
 
     public void deleteTask(int id) {

@@ -8,7 +8,8 @@
 		<head>
 			<title>Blabber</title>
 			<link rel="stylesheet" href="/resources/core/css/bootstrap.min.css">
-			<link rel="stylesheet" href="/resources/core/css/hello.css">
+			<link rel="stylesheet" href="/resources/core/css/font-awesome.min.css">
+			<link rel="stylesheet" href="/resources/core/css/styles.css">
 		</head>
 
 		<body>
@@ -35,18 +36,28 @@
 					<div class="col-md-6 col-md-offset-3 list-task">
 						<c:forEach var="task" items="${tasklist}">
 							<div class="task">
-								<span class="day">
+								<span class="task-date">
 									<fmt:formatDate value="${task.date}" type="date" dateStyle="long" pattern="E - dd MMMM"/>
 								</span>
 								<p>${task.text}</p>
-								<span class="remain">
+								<span class="task-time">
 									<fmt:formatDate value="${task.date}" type="time" pattern="HH:mm"/>
 								</span>
+
+								<a href="/" id="edit_${task.id}" class="btn-task btn-edit fa-pencil"></a>
+								<a href="/" id="delete_${task.id}" class="btn-task btn-del fa-trash"></a>
 							</div>
 						</c:forEach>
 					</div>
 				</div>
 			</div>
 		</body>
+
+		<footer>
+
+		</footer>
+
+		<script src="/resources/core/js/jquery-1.11.2.min.js"></script>
+		<script src="/resources/core/js/scripts.js"></script>
 
 	</html>
