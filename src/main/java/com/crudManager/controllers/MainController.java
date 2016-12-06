@@ -20,39 +20,32 @@ public class MainController {
     TaskService taskService;
 
     @RequestMapping(value ="/" , method = RequestMethod.GET)
-    String welcome( Model model){
+    String welcome(Model model){
+        UserTask task = new UserTask();
+        model.addAttribute("task",task);
         model.addAttribute("tasklist",taskService.getTaskList());
         return "index";
     }
 
     @RequestMapping(value ="/add" , method = RequestMethod.POST)
     String addTask(@RequestParam("task-text")String text,
-                   @RequestParam("task-date")String taskDate,
-                   @RequestParam("task-time")String taskTime){
+                   @RequestParam("task-date")String date,
+                   @RequestParam("task-time")String time){
 
-        UserTask task = new UserTask();
+        UserTask task = taskService.findTask(27);
         task.setText(text);
+        task.setDate(task.concateDate(date,time));
+        taskService.updateTask(task);
 
-        try {
-            String sDate = taskDate+" "+taskTime;
-            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-            Date date = formatter.parse(sDate);
-            task.setDate(date);
-        } catch (ParseException e) {
-            System.out.println();
-        }
-
-        taskService.createTask(task);
         return "redirect:/";
     }
 
-    @RequestMapping(value ="/update/{id}", method = RequestMethod.GET)
-    String update(@PathVariable("id")int id,@RequestParam("newText")String newText){
-        UserTask task = taskService.findTask(id);;
-        task.setText(newText);
-
-        taskService.updateTask(task);
-        return "redirect:/";
+    @RequestMapping(value ="/update/{id}")
+    String update(@PathVariable("id")int id,Model model){
+        UserTask task = taskService.findTask(id);
+        model.addAttribute("task",task);
+        model.addAttribute("tasklist",taskService.getTaskList());
+        return "index";
     }
 
     @RequestMapping(value ="/remove/{id}", method = RequestMethod.GET)

@@ -85,3 +85,11 @@ footer{
     z-index: 10;
 }
 
+.win{
+    display: none;
+    position: absolute;
+    left: 100px;
+    top:200px;
+    width: 200px;
+    height: 100px;
+}
