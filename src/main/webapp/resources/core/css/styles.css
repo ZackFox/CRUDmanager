@@ -17,15 +17,34 @@ header{
     margin-top: 131px;
 }
 
-.btn{
-    margin-bottom: 20px;
+#when{
+    margin-left: 35px;
+}
+
+.date-field{
+    width: 80px;
+    padding: 4px 5px;
+    margin-right:70px;
+}
+
+.time-field{
+    width:46px;
+    padding: 4px;
+}
+
+.btn-submit{
+    width:215px;
+    margin:10px 0 0 90px;
+    display: block;
 }
 
 .task-text{
     width: 400px;
-    height: 40px;
+    margin-bottom:10px;
     padding: 5px;
+    display: block;
     resize:none;
+
 }
 
 .task{
@@ -76,6 +95,7 @@ header{
 .btn-edit{
     left: 4px;
 }
+
 footer{
     position: absolute;
     bottom: 0;
@@ -83,13 +103,4 @@ footer{
     padding: 10px;
     background: #d43f3a;
     z-index: 10;
-}
-
-.win{
-    display: none;
-    position: absolute;
-    left: 100px;
-    top:200px;
-    width: 200px;
-    height: 100px;
 }

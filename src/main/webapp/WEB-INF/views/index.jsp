@@ -27,11 +27,22 @@
 			<div class="container tsk">
 				<div class="row">
 					<div class="col-md-6">
+						<c:if test="${task.id==0}"><h3>Новая задача</h3></c:if>
+						<c:if test="${task.id!=0}"><h3>Правка задачи</h3></c:if>
+
 						<form action="/add" method="post">
-								<textarea class="task-text" name="task-text">${task.text}</textarea>
-								<input type="text" name="task-date" value="<fmt:formatDate value="${task.date}" type="date" pattern="dd-MM-yyyy"/>" placeholder="00-00-0000">
-								<input type="text" name="task-time" value="<fmt:formatDate value="${task.date}" type="time" pattern="HH:mm"/>" placeholder="00:00">
-								<input class="btn btn-success" type="submit" value="Записать">
+								<textarea class="task-text" name="taskText">${task.text}</textarea>
+								<input type="hidden" name="taskId" value="${task.id}">
+								<label id="when">Когда </label>
+								<input type="text" name="taskDate" class="date-field" value="<fmt:formatDate value="${task.date}" type="date" pattern="dd-MM-yyyy"/>" placeholder="дд-мм-гггг">
+								<label>Во сколько</label>
+								<input type="text" name="taskTime" class="time-field" value="<fmt:formatDate value="${task.date}" type="time" pattern="HH:mm"/>" placeholder="00:00">
+								<c:if test="${task.id == 0}">
+									<input class="btn btn-submit btn-success" type="submit" value="Записать">
+								</c:if>
+								<c:if test="${task.id>0}">
+									<input class="btn btn-submit btn-primary" type="submit" value="Изменить">
+								</c:if>
 						</form>
 					</div>
 
@@ -52,9 +63,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="win">
-				<a href="/">delete</a>
-			</div>
 		</body>
 
 		<footer>
@@ -62,6 +70,8 @@
 		</footer>
 
 		<script src="/resources/core/js/jquery-1.11.2.min.js"></script>
-		<%--<script src="/resources/core/js/scripts.js"></script>--%>
+		<script src="/resources/core/js/moment-with-locales.min.js"></script>
+		<script src="/resources/core/js/combodate.js"></script>
+		<script src="/resources/core/js/scripts.js"></script>
 
 	</html>

@@ -28,15 +28,22 @@ public class MainController {
     }
 
     @RequestMapping(value ="/add" , method = RequestMethod.POST)
-    String addTask(@RequestParam("task-text")String text,
-                   @RequestParam("task-date")String date,
-                   @RequestParam("task-time")String time){
+    String addTask(@RequestParam("taskId")String id,
+                   @RequestParam("taskText")String text,
+                   @RequestParam("taskDate")String date,
+                   @RequestParam("taskTime")String time){
 
-        UserTask task = taskService.findTask(27);
+        UserTask task = new UserTask();
         task.setText(text);
         task.setDate(task.concateDate(date,time));
-        taskService.updateTask(task);
 
+        int parseId = Integer.parseInt(id);
+        if(parseId==0){
+            taskService.createTask(task);}
+        else{
+            task.setId(parseId);
+            taskService.updateTask(task);
+        }
         return "redirect:/";
     }
 
