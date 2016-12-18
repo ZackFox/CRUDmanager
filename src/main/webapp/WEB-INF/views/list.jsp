@@ -30,7 +30,7 @@
 						<c:if test="${task.id==0}"><h3>Новая задача</h3></c:if>
 						<c:if test="${task.id!=0}"><h3>Правка задачи</h3></c:if>
 
-						<form action="/add" method="post">
+						<form action="/list/add" method="post">
 								<textarea class="task-text" name="taskText">${task.text}</textarea>
 								<input type="hidden" name="taskId" value="${task.id}">
 								<label id="when">Когда </label>
@@ -56,8 +56,8 @@
 								<span class="task-time">
 									<fmt:formatDate value="${taskItem.date}" type="time" pattern="HH:mm"/>
 								</span>
-								<a href="<c:url value="/update/${taskItem.id}"/>" class="btn-task btn-edit fa-pencil"></a>
-								<a href="<c:url value="/remove/${taskItem.id}"/>"class="btn-task btn-del fa-trash"></a>
+								<a href="<c:url value="list/update/${taskItem.id}"/>" class="btn-task btn-edit fa-pencil"></a>
+								<a href="<c:url value="list/remove/${taskItem.id}"/>"class="btn-task btn-del fa-trash"></a>
 							</div>
 						</c:forEach>
 					</div>
