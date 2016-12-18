@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/dependency/jetty-runner.jar --port $PORT target/*.war
+web: java $JAVA_OPTS -cp target/dependency/jetty-runner.jar --port 37825 target/*.war
