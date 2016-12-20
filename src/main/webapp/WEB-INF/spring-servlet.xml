@@ -37,6 +37,16 @@
 	</bean>
 
 	<!--<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">-->
+<<<<<<< Updated upstream
+=======
+		<!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+		<!--<property name="url" value="jdbc:mysql://127.6.147.130:3306/crudemanager"/>-->
+		<!--<property name="username" value="adminDjLZsMy"/>-->
+		<!--<property name="password" value="aZNttaE3TeTW"/>-->
+	<!--</bean>-->
+
+	<!--<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">-->
+>>>>>>> Stashed changes
 		<!--<property name="driverClassName" value="com.postgresql.jdbc.Driver"/>-->
 		<!--<property name="url" value="jdbc:postgresql://ec2-54-163-224-108.compute-1.amazonaws.com:5432/d6059g83081s54"/>-->
 		<!--<property name="username" value="pgnfumtwhdzppc"/>-->
