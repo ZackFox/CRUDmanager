@@ -38,7 +38,6 @@
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-				<!--<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>-->
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
@@ -49,5 +48,4 @@
 	<bean id="transaction-manager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
-
 </beans>
