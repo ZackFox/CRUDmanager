@@ -16,13 +16,16 @@
 		<body>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3 ">
+					<div class="col-md-12">
 						<h2>Добро пожаловать</h2>
 						<p>"Менеджер задач" - это простое CRUD приложение, которое может получать данные из базы данных,
-							выводить их, редактировать и удалять</p>
+							выводить их, редактировать и удалять. Для создания задачи необходимо указать текст задачи, дату и время исполнения.
+							Для редактирования необходимо нажать значок <i class="fa fa-pencil"></i>, для удаления значок <i class="fa fa-trash"></i>
+						</p>
 
 						<a href="/list">открыть Менеджер задач</a>
-						<a href="https://github/ZackFox/CRUDmanager">открыть репозиторий GitHub</a>
+
+						<a href="https://github.com/ZackFox/CRUDmanager">открыть репозиторий GitHub</a>
 
 						<p>В приложении использованны следующие технологии:</p>
 						<ul>
@@ -40,8 +43,8 @@
 		</body>
 
 		<footer>
-			<a href="https://github/ZackFox/CRUDmanager"></a>
-			<a href="https://heroku.com"></a>
+			<a href="https://github.com/ZackFox/CRUDmanager">github</a>
+			<a href="https://heroku.com">heroku.com</a>
 		</footer>
 
 		<script src="/resources/core/js/jquery-1.11.2.min.js"></script>
