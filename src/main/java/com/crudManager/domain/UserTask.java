@@ -9,14 +9,14 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Entity
-@Table(name = "public.mytask")
+@Table(name = "mytask")
 public class UserTask {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "taskField")
+    @Column(name = "task_text")
     private String text;
 
     @Column(name = "date")

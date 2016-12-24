@@ -26,8 +26,7 @@ public class TaskDaoImpl implements TaskDao  {
     }
 
     public List<UserTask> getTaskList() {
-        TypedQuery<UserTask> query = entityManager.createQuery("SELECT c FROM UserTask c", UserTask.class);
-        List<UserTask> results = query.getResultList();
+        List<UserTask> results = entityManager.createQuery("SELECT с FROM UserTask с").getResultList();;
         return results;
     }
 
