@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Entity
-@Table(name = "mytask")
+@Table(name = "public.mytask")
 public class UserTask {
     @Id
     @Column(name = "id")
