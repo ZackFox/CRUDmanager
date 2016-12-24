@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 	<html lang="en">
 		<head>
-			<title>Blabber</title>
+			<title>Менеджер задач</title>
 			<link rel="stylesheet" href="/resources/core/css/bootstrap.min.css">
 			<link rel="stylesheet" href="/resources/core/css/font-awesome.min.css">
 			<link rel="stylesheet" href="/resources/core/css/styles.css">
@@ -17,20 +17,34 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 ">
-						<h2>Менеджер задач</h2>
-						<a href="/list">список задач</a>
+						<h2>Добро пожаловать</h2>
+						<p>"Менеджер задач" - это простое CRUD приложение, которое может получать данные из базы данных,
+							выводить их, редактировать и удалять</p>
+
+						<a href="/list">открыть Менеджер задач</a>
+						<a href="https://github/ZackFox/CRUDmanager">открыть репозиторий GitHub</a>
+
+						<p>В приложении использованны следующие технологии:</p>
+						<ul>
+							<li>Spring MVC</li>
+							<li>Hibernate</li>
+							<li>JSP/JSTL</li>
+							<li>Bootstrap</li>
+							<li>jquery/plugins</li>
+							<li>PostgreSQL</li>
+							<li>Maven</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</body>
 
 		<footer>
-
+			<a href="https://github/ZackFox/CRUDmanager"></a>
+			<a href="https://heroku.com"></a>
 		</footer>
 
 		<script src="/resources/core/js/jquery-1.11.2.min.js"></script>
-		<script src="/resources/core/js/moment-with-locales.min.js"></script>
-		<script src="/resources/core/js/combodate.js"></script>
 		<script src="/resources/core/js/scripts.js"></script>
 
 	</html>
