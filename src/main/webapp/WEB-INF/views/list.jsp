@@ -72,8 +72,6 @@
 		</footer>
 
 		<script src="/resources/core/js/jquery-1.11.2.min.js"></script>
-		<script src="/resources/core/js/moment-with-locales.min.js"></script>
-		<script src="/resources/core/js/combodate.js"></script>
 		<script src="/resources/core/js/scripts.js"></script>
 
 	</html>
