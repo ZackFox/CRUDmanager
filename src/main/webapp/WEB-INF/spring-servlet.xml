@@ -37,8 +37,6 @@
 		<!--<property name="password" value="postgres"/>-->
 	<!--</bean>-->
 
-
-
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 	<property name="driverClassName" value="org.postgresql.Driver"/>
 	<property name="url" value="jdbc:postgresql://ec2-54-163-224-108.compute-1.amazonaws.com:5432/d6059g83081s54?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"/>

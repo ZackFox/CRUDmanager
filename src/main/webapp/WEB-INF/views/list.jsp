@@ -31,7 +31,7 @@
 						<c:if test="${task.id!=0}"><h3>Правка задачи</h3></c:if>
 
 						<form action="/list/add" method="post">
-								<textarea class="task-text" name="taskText">${task.text}</textarea>
+								<textarea class="task-text" name="taskText" required>${task.text}</textarea>
 								<input type="hidden" name="taskId" value="${task.id}">
 								<label id="when">Когда </label>
 								<input type="text" name="taskDate" class="date-field" value="<fmt:formatDate value="${task.date}" type="date" pattern="dd-MM-yyyy"/>" placeholder="дд-мм-гггг">
@@ -46,20 +46,22 @@
 						</form>
 					</div>
 
-					<div class="col-md-6 list-task">
-						<c:forEach var="taskItem" items="${tasklist}">
-							<div class="task">
-								<span class="task-date">
-									<fmt:formatDate value="${taskItem.date}" type="date" dateStyle="long" pattern="E - dd MMMM"/>
-								</span>
-								<p>${taskItem.text}</p>
-								<span class="task-time">
-									<fmt:formatDate value="${taskItem.date}" type="time" pattern="HH:mm"/>
-								</span>
-								<a href="<c:url value="list/update/${taskItem.id}"/>" class="btn-task btn-edit fa-pencil"></a>
-								<a href="<c:url value="list/remove/${taskItem.id}"/>"class="btn-task btn-del fa-trash"></a>
-							</div>
-						</c:forEach>
+					<div class="col-md-offset-6 col-md-6 list-task">
+						<c:if test="${!empty task}">
+							<c:forEach var="taskItem" items="${tasklist}">
+								<div class="task">
+									<span class="task-date">
+										<fmt:formatDate value="${taskItem.date}" type="date" dateStyle="long" pattern="E - dd MMMM"/>
+									</span>
+									<p>${taskItem.text}</p>
+									<span class="task-time">
+										<fmt:formatDate value="${taskItem.date}" type="time" pattern="HH:mm"/>
+									</span>
+									<a href="<c:url value="list/update/${taskItem.id}"/>" class="btn-task btn-edit fa-pencil"></a>
+									<a href="<c:url value="list/remove/${taskItem.id}"/>"class="btn-task btn-del fa-trash"></a>
+								</div>
+							</c:forEach>
+						</c:if>
 					</div>
 				</div>
 			</div>
