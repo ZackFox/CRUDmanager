@@ -26,7 +26,7 @@
 
 			<div class="container tsk">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 fixed-form">
 						<c:if test="${task.id==0}"><h3>Новая задача</h3></c:if>
 						<c:if test="${task.id!=0}"><h3>Правка задачи</h3></c:if>
 
